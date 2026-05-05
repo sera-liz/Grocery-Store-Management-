@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sell Product</title>
+
+<style>
+body { margin:0; font-family:'Segoe UI'; background:#f4f6f9; }
+
+.navbar {
+    display:flex; justify-content:space-between;
+    padding:15px 40px; background:white;
+}
+.navbar a { margin-left:20px; text-decoration:none; }
+
+.hero { display:flex; padding:50px; align-items:center; }
+.hero img { width:350px; border-radius:10px; }
+.hero-text { margin-left:40px; }
+
+.form-box {
+    background:white; width:300px; margin:40px auto;
+    padding:25px; border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+select, input { width:100%; padding:10px; margin:10px 0; }
+button { width:100%; padding:10px; background:#4CAF50; color:white; border:none; }
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div>🛒 GroceryStore</div>
+    <div>
+        <a href="/home">Home</a>
+        <a href="/add">Add</a>
+        <a href="/sales">Sales</a>
+    </div>
+</div>
+
+<div class="hero">
+    <img src="https://images.unsplash.com/photo-1607083206869-4c7672e72a8a">
+    <div class="hero-text">
+        <h2>Sell Products</h2>
+        <p>Select items and generate bills instantly.</p>
+    </div>
+</div>
+
+<div class="form-box">
+{% if error %}
+<p style="color:red; text-align:center;">{{ error }}</p>
+{% endif %}
+<form method="POST">
+<select name="product_id">
+{% for p in products %}
+<option value="{{p[0]}}">{{p[1]}}</option>
+{% endfor %}
+</select>
+
+<input name="quantity" placeholder="Quantity">
+<button>Sell Product</button>
+</form>
+</div>
+
+</body>
+</html>

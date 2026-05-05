@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+
+<style>
+body {
+    margin:0;
+    font-family:'Segoe UI';
+    display:flex;
+    height:100vh;
+}
+
+/* LEFT SIDE */
+.left {
+    flex:1;
+    background:url('https://images.unsplash.com/photo-1542838132-92c53300491e');
+    background-size:cover;
+}
+
+/* RIGHT SIDE */
+.right {
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f4f6f9;
+}
+
+.login-box {
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    width:300px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+input {
+    width:90%;
+    padding:10px;
+    margin:10px;
+}
+
+button {
+    width:95%;
+    padding:10px;
+    background:#4CAF50;
+    color:white;
+    border:none;
+    border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="left"></div>
+
+<div class="right">
+    <div class="login-box">
+        <h2>Welcome Back 👋</h2>
+        <p>Manage your grocery store easily</p>
+
+        <form method="POST">
+            <input name="username" placeholder="Username">
+            <input name="password" placeholder="Password">
+            <button>Login</button>
+        </form>
+
+        <p style="color:gray;">Demo login (any value)</p>
+    </div>
+</div>
+
+</body>
+</html>

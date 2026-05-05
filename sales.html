@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sales Report</title>
+
+<style>
+body { margin:0; font-family:'Segoe UI'; background:#f4f6f9; }
+
+.navbar {
+    display:flex; justify-content:space-between;
+    padding:15px 40px; background:white;
+}
+
+.hero { display:flex; padding:50px; align-items:center; }
+.hero img { width:350px; border-radius:10px; }
+.hero-text { margin-left:40px; }
+
+table {
+    width:70%; margin:30px auto;
+    border-collapse:collapse;
+    background:white;
+}
+th, td { padding:12px; border:1px solid #ddd; }
+th { background:#4CAF50; color:white; }
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div>🛒 GroceryStore</div>
+    <div>
+        <a href="/home">Home</a>
+        <a href="/add">Add</a>
+        <a href="/sell">Sell</a>
+    </div>
+</div>
+
+<div class="hero">
+    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c">
+    <div class="hero-text">
+        <h2>Sales Report</h2>
+        <p>Track all transactions and revenue.</p>
+    </div>
+</div>
+
+<table>
+<tr><th>Product</th><th>Quantity</th><th>Total</th></tr>
+
+{% for s in sales %}
+<tr>
+<td>{{s[0]}}</td>
+<td>{{s[1]}}</td>
+<td>₹{{s[2]}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>
